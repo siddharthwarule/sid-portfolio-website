@@ -1,0 +1,240 @@
+@keyframes fillProgress {
+    from {
+      width: 0;
+    }
+    to {
+      width: 90%; /* Target fill level */
+    }
+  }
+
+  body::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in WebKit-based browsers (Chrome, Safari) */
+}
+
+
+/* Style for text selection */
+::selection {
+  color: white;
+  background-color: #E9C923; /* Yellow background */
+}
+
+::-moz-selection { /* For Firefox */
+  color: white;
+  background-color: #E9C923;
+}
+  
+  
+  .progress-bar {
+    background-color: #48bb78; /* green color for progress */
+    height: 100%;
+    width: 0; /* Start at 0% */
+    border-radius: inherit;
+    transition: width 1.5s ease; /* Smooth transition */
+  }
+  
+  #navbar img{
+
+    margin-top: 4px;
+    height: 40px;
+    width: 45px;
+
+}
+
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-in {
+    animation: fadeIn 1s ease-out forwards;
+  }
+
+  @font-face {
+  font-family:gamefont;
+  src: url("../../asset/fonts/VeniteAdoremus-rgRBA.ttf");
+}
+
+@font-face {
+  font-family:gamefont2;
+  src: url("../../asset/fonts/VeniteAdoremusStraight-Yzo6v.ttf");
+}
+
+
+
+  
+#navbar{
+  z-index: 33;
+  position:fixed;
+  height: 10vh;
+  width: 100%;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  gap: 10vh;
+}
+
+
+#navbar img {
+  margin-left: 2vh;
+}
+
+
+.gamefont{
+
+font-family:"gamefont";
+
+}
+
+.gamefont2{
+
+font-family:"gamefont2";
+
+}
+
+#navbar a{
+  color:black;
+  text-decoration: none;
+  font-size: 1em;
+  text-transform: uppercase;
+  transition: color 0.3s;
+  font-family:"gamefont";
+  padding:10px;
+  z-index:100;
+  /* padding-bottom:4vh; */
+  transition: transform 0.3s ease-in-out; /* Add transition for smooth scaling */
+}
+
+#navbar a:hover {
+
+
+  
+/* background-color: #E9C923; */
+font-size:25px;
+/* border: 2px solid #E9C923; */
+}
+
+#navbar li{
+  list-style: none;
+}
+
+#links{
+  display: flex;
+  align-items: center;
+  gap: 10vh;
+  margin-left: 4vh;
+} 
+
+#links a {
+  transition: transform 0.3s ease-in-out;
+}
+
+
+/* General styles */
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content:flex-start;
+  padding: 1rem; 
+  /* background-color: #333; Example background color */
+}
+
+#navbar #links {
+  display: flex;
+  gap: 1rem;
+}
+
+#navbar #links li {
+  list-style: none;
+}
+
+#navbar a {
+  color: white;
+  text-decoration: none;
+  padding-left: 40px;
+  padding-right: 30px;
+}
+
+/* Styles for mobile */
+#menu-toggle {
+  display: none; /* Hide toggle button on larger screens */
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.mobile-img{
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  #navbar a {
+    color: white;
+    text-decoration: none;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  
+
+  #navbar {
+    /* display: flex; */
+    align-items: center;
+    justify-content:space-between;
+    /* padding: 1rem;  */
+    /* background-color: #333; Example background color */
+  }
+  
+ #navbar a:hover {
+/* background-color: #E9C923; */
+font-size:15px;
+/* border: 2px solid #E9C923; */
+}
+
+  #menu-toggle {
+      display: block; /* Show toggle button on smaller screens */
+      z-index: 100;
+  }
+  
+  #navbar #links {
+      display: none; /* Hide links by default */
+      flex-direction: column;
+      position: absolute;
+      top: 13px; /* Adjust for navbar height */
+      right: 10px;
+      background-color:rgba(0, 0, 0, 0.389); /* Background color for the dropdown */
+      backdrop-filter: blur(5%); /* Blur effect */
+      /* -webkit-backdrop-filter: blur(10px); /* Safari */
+      padding: 1rem;
+      border-radius: 5px;
+      width: 150px;
+  }
+  
+  #navbar #links li {
+      margin: 0.5rem 0;
+  }
+  
+  #navbar.active #links {
+      display: flex; /* Show links when navbar is active */
+  }
+
+  .main-body{
+    padding-top: 20px;
+  }
+
+  .desktop-img{
+    display: none;
+  }
+  .mobile-img{
+    display: inline;
+  }
+
+  
+#navbar img {
+  margin-left: 0vh;
+}
+
+}
+
+

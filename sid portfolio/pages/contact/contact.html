@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <title>Contact with Sid</title> -->
+
+  <title>Siddharth Warule - Full Stack Web Developer</title>
+  <!-- Description -->
+  <meta name="description" content="I'm Siddharth Avinash Warule, a Full Stack Web Developer specializing in modern web technologies like Angular, React, Node.js, and MongoDB. Explore my projects, skills, and portfolio.">
+ 
+  <!-- Keywords -->
+  <meta name="keywords" content="Full Stack Developer, Web Developer, Siddharth Warule, Angular, Node.js, React, MongoDB, Portfolio, Tailwind CSS, MySQL, JavaScript">
+  
+  <!-- Author -->
+  <meta name="author" content="Siddharth Avinash Warule">
+  
+  <!-- Robots -->
+  <meta name="robots" content="index, follow">
+  
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#E9C923">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="https://lambdasam-86eee8d461-ap-south-1.s3.ap-south-1.amazonaws.com/sidwhitelogo.pngfavicon.png" type="image/png">
+  
+  <!-- Open Graph for Social Media Sharing -->
+  <meta property="og:title" content="Siddharth Avinash Warule | Full Stack Web Developer">
+  <meta property="og:description" content="Explore the portfolio of Siddharth Avinash Warule, a Full Stack Web Developer experienced in Angular, Node.js, React, MongoDB, and more.">
+  <meta property="og:image" content="https://lambdasam-86eee8d461-ap-south-1.s3.ap-south-1.amazonaws.com/sidwhitelogo.png">
+  <meta property="og:url" content="https://your-portfolio-link.com">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Siddharth Avinash Warule | Full Stack Web Developer">
+  <meta name="twitter:description" content="I'm a Full Stack Web Developer passionate about crafting modern and responsive web solutions. Check out my work!">
+  <meta name="twitter:image" content="https://lambdasam-86eee8d461-ap-south-1.s3.ap-south-1.amazonaws.com/sidwhitelogo.png">
+  <meta name="twitter:site" content="@yourTwitterHandle">
+
+
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./contact.css">
+  <style>
+    /* Custom fade-in animation */
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 2s ease-in-out forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+
+<nav id="navbar">
+   <img src="https://lambdasam-86eee8d461-ap-south-1.s3.ap-south-1.amazonaws.com/sidwhitelogo.png" alt="img">  
+    <button id="menu-toggle" aria-label="Toggle navigation">&#9776;</button> <!-- Hamburger Icon -->
+    <div id="links">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../about/about.html">About me</a></li>
+        <li><a href="../../pages/project/project.html">Projects</a></li>
+        <li><a href="https://futuredecode.com/">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+    </div>
+</nav>
+<body class="bg-gray-900 flex items-center justify-center min-h-screen text-yellow-400">
+    
+  <!-- Centered Form Container -->
+  <div class="form-container fade-in w-full max-w-lg p-6 rounded-lg bg-gray-800 shadow-lg">
+    
+    <h2 class="text-3xl font-bold text-center text-yellow-400 mb-6">Contact Us</h2>
+    <form onsubmit="handleSubmit(event)" method="post" novalidate class="space-y-4" id="contactForm">
+      <div>
+        <label for="name" class="block text-lg font-semibold mb-1">Name:</label>
+        <input type="text" id="name" name="name" required
+          class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
+          placeholder="Enter your name">
+        <p class="text-red-500 text-sm mt-1 hidden" id="nameError">Please enter your name.</p>
+      </div>
+      <div>
+        <label for="email" class="block text-lg font-semibold mb-1">Email:</label>
+        <input type="email" id="email" name="email" required
+          class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
+          placeholder="Enter your email">
+        <p class="text-red-500 text-sm mt-1 hidden" id="emailError">Please enter a valid email address.</p>
+      </div>
+      <div>
+        <label for="message" class="block text-lg font-semibold mb-1">Message:</label>
+        <textarea id="message" name="message" rows="4" required
+          class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
+          placeholder="Enter your message"></textarea>
+        <p class="text-red-500 text-sm mt-1 hidden" id="messageError">Please enter a message.</p>
+      </div>
+      <button type="submit"
+        class="w-full py-3 px-6 rounded-lg bg-yellow-400 text-gray-900 font-bold hover:bg-yellow-300 transition">Submit</button>
+    </form>
+  </div>
+
+  <!-- Thank You Modal -->
+  <div id="thankYouModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+    <div class="bg-gray-800 p-6 rounded-lg text-center text-yellow-400 max-w-sm mx-auto shadow-lg">
+      <h3 class="text-2xl font-semibold mb-4">Thank you!</h3>
+      <p class="mb-6">Thanks for connecting with us. We’ll get back to you shortly!</p>
+      <button onclick="closeModal()" class="bg-yellow-400 text-gray-900 px-4 py-2 rounded-lg font-bold hover:bg-yellow-300 transition">Close</button>
+    </div>
+  </div>
+
+  <!-- Fixed Footer -->
+  <footer class="w-full bg-gray-900 text-yellow-400 py-4 text-center fixed bottom-0">
+    <p>&copy; 2024 Siddharth Warule. All rights reserved.</p>
+  </footer>
+
+  <!-- Validation Script -->
+
+   <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+   <script src="./contact.js"></script>
+ 
+</body>
+</html>

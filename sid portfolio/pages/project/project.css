@@ -1,0 +1,935 @@
+#para {
+    /* Default styles for all views */
+    pointer-events: auto; /* Allow clicks by default */
+    
+
+  }
+  
+  /* Mobile view: make non-clickable */
+  @media screen and (max-width: 768px) {
+    #para {
+      pointer-events: none; /* Disable clicks on mobile view */
+      opacity: 0.6; /* Optional: Add visual feedback for disabled state */
+    }
+  }
+* {
+    margin :0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:gilroy;
+
+}
+html,
+body {
+
+    scroll-behavior: smooth;
+    height:100%;
+    background-color: #000000;
+    /* width:100%; */
+    overflow-x: hidden;
+
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+  
+body::-webkit-scrollbar{
+    display: none;
+}
+
+@font-face {
+    font-family:gamefont;
+    src: url("../../asset/fonts/VeniteAdoremus-rgRBA.ttf");
+}
+
+@font-face {
+    font-family:gamefont2;
+    src: url("./asset/fonts/KnightWarrior-w16n8.otf");
+}
+
+@font-face {
+    font-family:gamefont3;
+    src: url("../../asset/fonts/Cinzel-VariableFont_wght.ttf");
+}
+
+
+#navbar{
+    z-index: 33;
+    position:fixed;
+    height: 10vh;
+    width: 100%;
+    /* background-color: red; */
+    /* position: sticky; */
+    display: flex;
+    align-items: center;
+    gap: 15vh;   
+}
+
+
+/* #navbar img {
+ 
+    z-index:1000;
+} */
+
+#navbar img{
+
+    /* margin-top: 4px; */
+     height: 40px;
+     width: 50px;
+     margin-left: 2vh;
+ 
+ 
+ }
+
+#navbar a{
+    color:black;
+    text-decoration: none;
+    font-size: 1em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    font-family:"gamefont";
+    padding:10px;
+    /* padding-left: 50px; */
+    z-index:100;
+    /* padding-bottom:4vh; */
+    transition: transform 0.3s ease-in-out; /* Add transition for smooth scaling */
+}
+
+footer p {
+
+    color: #e1bf14;
+    text-align: center;
+
+    padding-bottom: 50px;
+
+}
+
+#navbar a:hover {
+
+/* background-color: #E9C923; */
+font-size:25px;
+/* border: 2px solid #E9C923; */
+
+}
+
+#navbar li{
+    list-style: none;
+    z-index:100;
+
+}
+
+#links{
+    z-index:100;
+
+    display: flex;
+    align-items: center;
+    gap: 5vh;
+    margin-left: 4vh;
+} 
+
+#links a {
+    z-index:100;
+    transition: transform 0.3s ease-in-out;
+}
+
+#page2 {
+    width: 100%;
+    height: 31%;
+    z-index: 60;
+    margin-top: -34px;
+    background-color:black;
+}
+
+#page3 {
+    /* z-index: 60; */
+    width: 100%;
+    height: 100%;
+    background-color: rgb(21, 255, 0);
+}
+
+
+/* @media (max-width: 768px) { */
+
+    /* body{
+       
+        overflow-x: hidden;
+        /* width: 100; */
+
+    /* } */
+/* 
+    #navbar {
+
+        left: -120;
+
+    } */
+/* 
+    #main{
+        background-color: black;
+        width: 160vh;
+        overflow-x: hidden;
+       }
+
+     #textmain{
+    
+        top:140;
+        left: 20;
+
+       }
+       video{
+        height: 100%;
+        width: 100%;
+        object-fit:fill;
+    } */
+
+
+
+/* } */
+
+
+.demo{
+    color: white;
+
+}
+
+
+/* nav bar styling */
+
+#nav{
+    display: flex;
+    justify-content: space-between;
+    z-index: 100;
+    background-color: black;
+}
+
+#nav div{
+    margin: 20px;
+}
+
+#nav h1 , i{
+
+    color: white;
+    cursor: pointer;
+
+}
+
+#menu{
+    height: 100%;
+    background-color:rgba(23, 97, 207, 0.463);
+    width: 30%;
+    position:absolute;
+    right: -30%;
+    text-align: center;
+    z-index: 1000;
+    backdrop-filter:blur(5px);
+}
+
+/* #menuitem{
+    z-index: 1000;
+    margin-top: 150px;
+}
+
+#menu h1{
+    z-index: 1000;
+    color: wheat;
+    padding: 20px;
+}
+
+#menu i {
+    z-index: 1000;
+    position: absolute;
+    left: 15;
+    top: 15;
+    font-size: 30px;
+   
+
+} */
+
+
+#box{
+    height: 300px;
+    width: 300px;
+    background-color: crimson;
+}
+
+
+/* page 3 paralax Animation start from the here */
+
+.paralax{
+    pointer-events:none;
+    position: absolute;
+    transform: translate(-50%,-50%);
+}
+
+#page3{
+    
+    position: relative;
+    height: 100vh;
+    /* width: 100vh; */
+    overflow: hidden;
+    background-color: rgb(14, 233, 160);
+    
+ }
+
+ .paralax_text{
+  
+    position: absolute;
+    font-size:14vh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:rgb(217, 255, 219);
+    z-index:5;
+    top: 33%;
+    left: 17%;
+    opacity: 1;
+
+ }
+
+ .bg-img{
+    position: absolute;
+    width: 3300px;
+    z-index: 1;
+    /* top: calc(8%); */
+    /* left: calc(50%);   */
+
+ }
+
+ .fog-7{
+    z-index: 5;
+    position: absolute;
+    width: 3300px;
+    top: calc(50%);
+    left: calc(50%);
+ }
+
+ .mountain-1{
+
+    z-index: 12;
+    position: absolute;
+    width: 400px;
+    top:calc(90%);
+    left:calc(8%);
+    /* transform: translate(-50%,-50%); */
+    
+
+ }
+
+ .mountain-2{
+    
+    z-index: 11;
+    position: absolute;
+    width: 500px;
+    /* height: 600px; */
+    top:calc(80%);
+    left:calc(40%);
+    /* transform: translate(-50%,-50%); */
+
+ }
+
+ .mountain-3{
+    position: absolute;
+    width: 400px;
+    top:calc(67%);
+    /* left:calc(40vh); */
+    /* height: 500px; */
+    left: calc(90%);
+    z-index: 4;
+    /* transform: translate(-50%,-50%); */
+
+ }
+
+ .mountain-5{
+    position: absolute;
+    z-index: 8;
+    width: 400px;
+    top:calc(88%);
+    height: 400px;
+    left: calc(50%);
+    /* transform: translate(-50%,-50%); */
+ }
+
+ .mountain-4{
+    z-index: 8;
+    position: absolute;
+    width: 700px;
+    top:calc(88%);
+    left: calc(15%);
+    /* transform: translate(-50%,-50%); */
+ }
+
+ .mountain-6{
+    position: absolute;
+    width: 550px;
+    top:calc(88%);
+    left: calc(76%);
+    /* transform: translate(-50%,-50%); */
+    z-index: 3;
+ }
+
+ .mountain-7{
+    z-index: 4;
+    position: absolute;
+    width: 650px;
+    top:calc(88%);
+    /* transform: translate(-50%,-50%); */
+    left: calc(66%);
+ }
+
+ .mountain-8{
+    position: absolute;
+    width: 650px;
+    height: 800px;
+    top:calc(88%);
+    z-index: 4;
+    left: calc(25%);
+    /* transform: translate(-50%,-50%); */
+ }
+
+ .fog-1{
+
+    z-index: 1;
+    position: absolute;
+    width: 650px;
+    height: 800px;
+    top:calc(88%);
+    left: calc(36%);
+    /* transform: translate(-50%,-50%); */
+
+ }
+
+ .fog-2{
+    z-index: 1;
+    position: absolute;
+    width: 650px;
+    /* height: 800px; */
+    top:calc(48%);
+    left: calc(16%);
+    /* transform: translate(-50%,-50%); */
+ }
+
+ .fog-3{
+    z-index: 1;
+    position: absolute;
+    width: 650px;
+    top:calc(88%);
+    left: calc(10%);
+    /* transform: translate(-50%,-50%); */
+
+}
+
+.fog-4{
+    z-index: 1;
+    
+    position: absolute;
+    width: 650px;
+    top:calc(68%);
+    left: calc(66%);
+    /* transform: translate(-50%,-50%); */
+
+
+}
+ 
+
+ #page3 h1{
+    font-size: 60vh;
+    text-transform: uppercase;
+ }
+
+
+ /* -------------------------------------- */
+ /*   for the paralaxmediaquery */
+
+@media (max-width: 768px) {
+
+    #para {
+        pointer-events: none; /* Disable clicks on mobile view */
+        opacity: 0.6; /* Optional: Add visual feedback for disabled state */
+      }
+    
+#navbar a{
+
+    padding-left: 0px;
+
+}
+    
+.paralax{
+    pointer-events:none;
+    position: absolute;
+    transform: translate(-50%,-50%);
+}
+
+#page3{
+    
+    position: relative;
+    height: 100vh;
+    /* width: 100vh; */
+    overflow: hidden;
+    background-color: rgb(14, 233, 160);
+    
+ }
+
+ .paralax_text{
+  
+    position: absolute;
+    font-size:5vh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:rgb(217, 255, 219);
+    z-index:5;
+    top: 38%;
+    left: 10%;
+
+ }
+
+ .bg-img{
+    position: absolute;
+    width: 3300px;
+    z-index: 1;
+    /* top: calc(8%); */
+    /* left: calc(50%);   */
+
+ }
+
+ .project-card {
+      height: 55vh !important;
+ }
+
+ .fog-7{
+    z-index: 5;
+    position: absolute;
+    width: 400px;
+    top: calc(50%);
+    left: calc(50%);
+ }
+
+ .mountain-1{
+
+    z-index: 12;
+    position: absolute;
+    width: 400px;
+    top:calc(90%);
+    left:calc(8%);
+    /* transform: translate(-50%,-50%); */
+    
+
+ }
+
+ .mountain-2{
+    
+    z-index: 11;
+    position: absolute;
+    width: 500px;
+    /* height: 600px; */
+    top:calc(80%);
+    left:calc(40%);
+    /* transform: translate(-50%,-50%); */
+
+ }
+
+ .mountain-3{
+    position: absolute;
+    width: 400px;
+    top:calc(67%);
+    /* left:calc(40vh); */
+    /* height: 500px; */
+    left: calc(90%);
+    z-index: 4;
+    /* transform: translate(-50%,-50%); */
+
+ }
+
+ .mountain-5{
+    position: absolute;
+    z-index: 8;
+    width: 400px;
+    top:calc(88%);
+    height: 400px;
+    left: calc(50%);
+    /* transform: translate(-50%,-50%); */
+ }
+
+ .mountain-4{
+    z-index: 8;
+    position: absolute;
+    width: 700px;
+    top:calc(88%);
+    left: calc(15%);
+    /* transform: translate(-50%,-50%); */
+ }
+
+ .mountain-6{
+    position: absolute;
+    width: 550px;
+    top:calc(88%);
+    left: calc(76%);
+    /* transform: translate(-50%,-50%); */
+    z-index: 3;
+ }
+
+ .mountain-7{
+    z-index: 4;
+    position: absolute;
+    width: 650px;
+    top:calc(88%);
+    /* transform: translate(-50%,-50%); */
+    left: calc(66%);
+ }
+
+ .mountain-8{
+    position: absolute;
+    width: 650px;
+    height: 800px;
+    top:calc(88%);
+    z-index: 4;
+    left: calc(25%);
+    /* transform: translate(-50%,-50%); */
+ }
+
+ .fog-1{
+
+    z-index: 1;
+    position: absolute;
+    width: 150px;
+    height: 800px;
+    top:calc(88%);
+    left: calc(36%);
+    /* transform: translate(-50%,-50%); */
+
+ }
+
+ .fog-2{
+    z-index: 1;
+    position: absolute;
+    width: 150px;
+    /* height: 800px; */
+    top:calc(48%);
+    left: calc(16%);
+    /* transform: translate(-50%,-50%); */
+ }
+
+ .fog-3{
+    z-index: 1;
+    position: absolute;
+    width: 150px;
+    top:calc(88%);
+    left: calc(10%);
+    /* transform: translate(-50%,-50%); */
+
+}
+
+.fog-4{
+    z-index: 1;
+    
+    position: absolute;
+    width: 150px;
+    top:calc(68%);
+    left: calc(66%);
+    /* transform: translate(-50%,-50%); */
+
+
+}
+ 
+
+ #page3 h1{
+    font-size: 60vh;
+    text-transform: uppercase;
+ }
+
+
+}
+
+#menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* Container Styling */
+#projects {
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    /* background-color: #333333; */
+    padding: 2rem;
+  }
+  
+  /* Project Grid Layout */
+  
+  @media (max-width: 768px) {
+
+
+   /* navbar styling */
+   
+
+  #navbar {
+    /* display: flex; */
+    align-items: center;
+    justify-content:space-between;
+    /* padding: 1rem;  */
+    /* background-color: #333; Example background color */
+  }
+  
+ #navbar a:hover {
+/* background-color: #E9C923; */
+font-size:15px;
+/* border: 2px solid #E9C923; */
+}
+
+  #menu-toggle {
+      display: block; /* Show toggle button on smaller screens */
+      margin-right: 18px;
+      z-index: 102;
+  }
+  
+  #navbar #links {
+      display: none; /* Hide links by default */
+      flex-direction: column;
+      position: absolute;
+      top: 13px; /* Adjust for navbar height */
+      right: 10px;
+      background-color:rgba(0, 0, 0, 0.389); /* Background color for the dropdown */
+      backdrop-filter: blur(5%); /* Blur effect */
+      /* -webkit-backdrop-filter: blur(10px); /* Safari */
+      padding: 1rem;
+      border-radius: 5px;
+      width: 150px;
+  }
+  
+  #navbar #links li {
+      margin: 0.5rem 0;
+     
+  }
+
+  #navbar a {
+    color: #ffffff !important;
+  }
+  
+  #navbar.active #links {
+      display: flex; /* Show links when navbar is active */
+  }
+
+    .description-text{  
+        /* padding: 20px; */
+        font-size: small;
+    }
+
+    .text-name{
+        font-size: large !important;
+    }
+  
+  }
+  /* General Styles for Project Card */
+.project-card {
+    border-radius: 5%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%; /* Use percentage to make it flexible */
+    max-width: 400px; /* Limit max width for large screens */
+    height: auto; /* Allow content to determine height */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #111; /* Dark background for a futuristic look */
+    border: 4px solid;
+    border-image: linear-gradient(45deg, #000000, #E9C923) 1;
+}
+
+/* Hover Effects */
+.project-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 0 10px #E9C923, 0 0 20px #e1bf14, 0 0 35px rgba(221, 186, 13, 0.9);
+}
+
+/* Image Styling */
+.project-card .project-image {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    filter: brightness(0.9);
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.05);
+}
+
+/* Project Text Content */
+.project-card h3 {
+    font-size: 1.2rem;
+    color: #E9C923;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.project-card p {
+    color: #ffffff;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.project-card a {
+    font-weight: 500;
+    color: #E9C923;
+    text-decoration: none;
+    display: inline-block;
+    margin: 1rem auto;
+    text-align: center;
+}
+
+.project-card a:hover {
+    text-decoration: underline;
+}
+
+/* Card Container Styles */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Space between cards */
+    margin: 2rem auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .project-card {
+        width: 95%; /* Full width for smaller screens */
+    }
+
+    .project-card h3 {
+        font-size: 1rem;
+    }
+
+    .project-card p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-card {
+        width: 100%; /* Full width */
+        margin: 0 auto;
+    }
+
+    .project-card h3 {
+        font-size: 0.9rem;
+    }
+
+    .project-card p {
+        font-size: 0.8rem;
+    }
+}
+
+
+/* Style for text selection */
+::selection {
+    color: white;
+    background-color: #E9C923; /* Yellow background */
+}
+
+::-moz-selection { /* For Firefox */
+    color: white;
+    background-color: #E9C923;
+}
+
+/* Background Styling with Yellow Tint */
+.page2 {
+    background-image: url("../../asset/image/background/prc_bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 10;
+}
+
+.heading-text {
+    font-family: 'gamefont';
+    text-align: center;
+    font-size: 2rem;
+    color: #E9C923;
+}
+
+.text-name {
+    font-family: 'gamefont';
+    font-size: 1.8rem;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.description-text {
+    padding: 10px;
+    font-family: "gamefont3";
+    font-size: 1rem;
+    text-align: center;
+}
+/* Card Container with More Gap */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px; /* Increased gap between cards */
+    margin: 2rem auto;
+}
+
+/* Background Styling with Black and Yellow Tint */
+.page2 {
+    background-image: linear-gradient(
+            rgb(23, 21, 21), /* Black tint */
+            #252005 /* Yellow tint */
+        ),
+        url("../../asset/image/background/prc_bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed; /* Creates a parallax effect */
+    position: relative;
+    z-index: 10;
+    filter: brightness(0.9); /* Makes the overlay faint */
+}
+
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+#loader h4{
+
+    padding-left: 20px;
+    text-align: center;
+    justify-content: center;
+    font-family: "gamefont";
+    color: #e1bf14;
+
+}
+
+.spinner {
+    width: 150px;
+    height: 150px;
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #E9C923;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Animation for spinner */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Hidden content initially */
+.hidden {
+    display: none;
+}
