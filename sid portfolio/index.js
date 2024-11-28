@@ -97,9 +97,6 @@
 //     }
 //   });
   
-
-  
-   
 gsap.to("#page3 h1", {
     duration: 10,
     color: "black",
@@ -116,8 +113,6 @@ gsap.to("#page3 h1", {
     }
   });
   
-
-
 gsap.to("#navbar",{
     backgroundColor:"black",
     color :"white",
@@ -157,6 +152,14 @@ gsap.to("#navbar",{
 // });
 
 
+//responsive navbar 
+const toggleButton = document.getElementById('menu-toggle');
+const navbar = document.getElementById('navbar');
+
+toggleButton.addEventListener('click', () => {
+    navbar.classList.toggle('active');
+});
+
 
 gsap.from("#navbar a",{
    
@@ -164,6 +167,16 @@ gsap.from("#navbar a",{
     y:-50,
     duration:2,
     delay:1,
+    stagger:0.3
+   
+})
+
+gsap.from("#navbar img",{
+   
+    opacity:0,
+    y:-50,
+    duration:2,
+    delay:1.6,
     stagger:0.3
    
 })
@@ -205,6 +218,7 @@ gsap.from("#textmain span", {
     duration:1,
     delay: 2,
     ease: "sine.out",
+    zIndex: 100 ,
     stagger:1   
   });
 
@@ -217,10 +231,8 @@ gsap.from("#textmain span", {
   });
 
 
-
-
-
   let spanString = "";
+
   document.querySelector(".animated-subtext").textContent.split('').forEach(element => {
 
     spanString +=`<span>${element}</span>`
@@ -232,7 +244,7 @@ gsap.from("#textmain span", {
   document.querySelector(".animated-subtext").innerHTML =spanString;
 
 
-  gsap.from(".animated-subtext span", {
+gsap.from(".animated-subtext span", {
     opacity: 0,
     Y:10,
     duration: 0.05,     // Reduce the duration for a faster animation
@@ -251,14 +263,9 @@ gsap.from(".glowing-box", {
     delay:5
 });
 
-
-
-
-
-//we need our animation run on the basis of scrolling we can use for that 
+// We need our animation run on the basis of scrolling we can use for that 
 // Scrub 
-
-// for the svg animation line code we can write code from here
+// For the svg animation line code we can write code from here 
 
 var path ="M 10 60 Q 650 60 900 60" ;
 var finalPath ="M 10 60 Q 650 60 900 60"  ;
@@ -294,17 +301,18 @@ string.addEventListener("mouseleave",()=>{
 
 // curser anmation start from here 
 
-let page = document.querySelector("#page1");
+let page = document.querySelector("#main");
 let cursor = document.querySelector("#cursors");
 let page2  = document.querySelector("#page2");
 let svg = document.querySelector("svg");
+let glowingBox = document.querySelector("#glow")
+let icon = document.querySelector("#icon")
 
 
 gsap.from("#cursors",{
     opacity:0,
     delay:6
 })
-
 
 page.addEventListener("mousemove",function(e){
 
@@ -320,274 +328,192 @@ page.addEventListener("mousemove",function(e){
 
 page.addEventListener("mouseleave",(e)=>{
    
-  if(true){
-  gsap.to(cursor,{
+
+  // if(true){
+gsap.to(cursor,{
       // x:20,
       y:(100-e.x),
       duration:2,
       // scale:0  
   })
-}
+
+gsap.to("#develop", {
+    y:-600,
+    x:-500,
+    rotation: 360, // Rotates 360 degrees
+    duration: 2,
+    delay: 0.2
+});
+
+gsap.to("#design", {
+    x: -600,
+    y: -800,
+    rotation: 360, // Rotates 360 degrees
+    duration: 2,
+    delay: 0.2
+});
+
+gsap.to("#deliver", {
+    x: 800,
+    y: -500,
+    rotation: 360, // Rotates 360 degrees
+    duration: 2,
+    delay: 0.2
+});
+
+
+// gsap.to(".glowing-box",{
+//   // x:20,
+//   y:(100-e.x),
+//   duration:2,
+//   delay:0
+//   // scale:0  
+// })
+
+// Responsive animation using GSAP
+gsap.to(".gif-img", {
+    duration: 2,
+    top: "35%", // Use percentage for responsive vertical positioning
+    delay: 0.4,
+    opacity: 1,
+    ease: "power2.out", // Add easing for smoother animation
+    onUpdate: () => {
+      // Optional: Add dynamic logic if needed for responsiveness
+    },
+  });
   
+  /* Adjust animation dynamically on resize */
+  window.addEventListener("resize", () => {
+    const newTop = window.innerWidth < 768 ? "65%" : "65%"; // Adjust based on screen width
+    gsap.to(".gif-img", {
+      top: newTop,  
+      duration: 1, // Smooth transition for the new position
+    });
+  });
+  
+  // }
 })
 
-// const para = document.querySelector("#your-element"); // Update this with your actual element selector
-
-
-// const para = document.querySelector("#your-element"); // Update this with your actual element selector
-
-// paralax animation start from here _____________________________________________________________________________________________________
-
-gsap.from(".bg-img", {
-  y: 300,               // Start from below
-  opacity: 0,           // Fade in effect
-  duration:3,
-  ease: "power1.out",
-  scrollTrigger: {
-    trigger: ".mountain-3",
-    start: "top bottom",  // Start animation when top of .bg-img hits bottom of viewport
-    toggleActions: "play none none none",
-  }
-});
-
-gsap.from(".mountain-1", {
-  y: 300,
-  opacity: 0,
-  duration: 3,
-  ease: "power1.out",
-  scrollTrigger: {
-    trigger: ".mountain-1",
-    start: "top bottom",
-    toggleActions: "play none none none",
-  }
-});
-
-// Repeat similar blocks for each mountain and fog layer
-gsap.from(".mountain-2", {
-  y: 300,
-  opacity: 0,
-  duration: 3,
-  ease: "power1.out",
-  scrollTrigger: {
-    trigger: ".mountain-1",
-    start: "top bottom",
-    toggleActions: "play none none none",
-   
-  }
-});
-
-gsap.from(".mountain-3", {
-  y: 300,
-  opacity: 0,
-  duration: 3,
-  ease: "power1.out",
-  scrollTrigger: {
-    trigger: ".mountain-1",
-    start: "top bottom",
-    toggleActions: "play none none none",
-  }
-});
-
-// Continue for the other mountains and fog layers
-gsap.from(".mountain-4", {
-  y: 300,
-  opacity: 0,
-  duration: 3,
-  ease: "power1.out",
-  scrollTrigger: {
-    trigger: ".mountain-1",
-    start: "top bottom",
-    toggleActions: "play none none none",
-  }
-});
-
-gsap.from(".mountain-5", {
-  y: 300,
-  opacity: 0,
-  duration: 3,
-  ease: "power1.out",
-  scrollTrigger: {
-    trigger: ".mountain-1",
-    start: "top bottom",
-    toggleActions: "play none none none",
-  }
-});
-
-gsap.from(".mountain-6", {
-  y: 300,
-  opacity: 0,
-  duration: 3,
-  ease: "power1.out",
-  scrollTrigger: {
-    trigger: ".mountain-1",
-    start: "top bottom",
-    toggleActions: "play none none none",
-  }
-});
-
-gsap.from(".mountain-7", {
-  y: 300,
-  opacity: 0,
-  duration: 3,
-  ease: "power1.out",
-  scrollTrigger: {
-    trigger: ".mountain-1",
-    start: "top bottom",
-    toggleActions: "play none none none",
-  }
-});
-
-gsap.from(".mountain-8", {
-  y: 300,
-  opacity: 0,
-  duration: 3,
-  ease: "power1.out",
-  scrollTrigger: {
-    trigger: ".mountain-1",
-    start: "top bottom",
-    toggleActions: "play none none none",
-  }
-});
-
-gsap.from(".paralax_text", {
-  x:50,
-  opacity: 0,
-  duration:4,
-  ease: "power1.out",
-  scrollTrigger: {
-    trigger: ".mountain-1",
-    start: "top bottom",
-    toggleActions: "play none none none",
-  }
-});
-
-
-gsap.from(".fog-1", {
-  y: 300,
-  opacity: 0,
-  duration: 2,
-  ease: "power1.out",
-  scrollTrigger: {
-    trigger: ".fog-1",
-    start: "top bottom",
-    toggleActions: "play none none none",
-  }
-});
-
-
-// Helper function to throttle the movement speed
-// Helper function to apply throttling for smoother transitions
-let lastX = 0;
-let lastY = 0;
-function throttle(value, target, rate = 0.05) {
-  return gsap.utils.interpolate(value, target, rate);
-}
-
-para.addEventListener("mousemove", function (e) {
-  const newX = throttle(lastX, e.x, 0.1);
-  const newY = throttle(lastY, e.y, 0.1);
-
-  lastX = newX;
-  lastY = newY;
-
-  // Background layers (slower movement)
-  gsap.from(".bg-img", {
-    x: newX  ,
-    // y: newY  ,
-    duration: 1,
-    ease: "power1.out",
-  });
-
-  gsap.from(".mountain-1", {
-    x: newX * 0.05,
-    // y: newY * 0.05,
-    duration: 0.8,
-    ease: "power1.out",
-  });
-
-  // Middle layers (moderate movement)
-  gsap.from(".mountain-2", {
-    x: newX * 0.05,
-    // y: newY * 0.05,
-    duration: 0.8,
-    ease: "power1.out",
+glowingBox.addEventListener("click", (e) => {
+    // Animate the custom cursor
+    gsap.to(cursor, {
+      x: e.clientX - 30, // Adjust for cursor size
+      y: e.clientY - 30,
+      duration: 2,
+      ease: "power2.out",
+    });
+  
+    // Animate the #develop element
+    gsap.to("#develop", {
+      y: -600,
+      x: -500,
+      rotation: 360, // Full rotation
+      duration: 2,
+      delay: 0.2,
+      ease: "back.out(1.7)", // Add easing
+    });
+  
+    // Animate the #design element
+    gsap.to("#design", {
+      x: -600,
+      y: -800,
+      rotation: 360,
+      duration: 2,
+      delay: 0.2,
+      ease: "back.out(1.7)",
+    });
+  
+    // Animate the #deliver element
+    gsap.to("#deliver", {
+      x: 800,
+      y: -500,
+      rotation: 360,
+      duration: 2,
+      delay: 0.2,
+      ease: "back.out(1.7)",
+    });
+  
+    // Animate .gif-img with responsive positioning
+    gsap.to(".gif-img", {
+      duration: 2,
+      top: "35%", // Responsive positioning
+      delay: 0.4,
+      opacity: 1,
+      ease: "power2.out",
+    });
+  
+    // Adjust animations dynamically on window resize
+    window.addEventListener("resize", () => {
+      const newTop = window.innerWidth < 768 ? "65%" : "35%"; // Adjust based on screen width
+      gsap.to(".gif-img", {
+        top: newTop,
+        duration: 1,
+        ease: "power2.out",
+      });
+    });
   });
   
-  gsap.from(".mountain-3", {
-    x: newX * 0.07,
-    // y: newY * 0.07,
-    duration: 1,
-    ease: "power1.out",
+icon.addEventListener("click", (e) => {
+    // Animate the custom cursor
+    gsap.to(cursor, {
+      x: e.clientX - 30, // Adjust for cursor size
+      y: e.clientY - 30,
+      duration: 2,
+      ease: "power2.out",
+    });
+  
+    // Animate the #develop element
+    gsap.to("#develop", {
+      y: -600,
+      x: -500,
+      rotation: 360, // Full rotation
+      duration: 2,
+      delay: 0.2,
+      ease: "back.out(1.7)", // Add easing
+    });
+  
+    // Animate the #design element
+    gsap.to("#design", {
+      x: -600,
+      y: -800,
+      rotation: 360,
+      duration: 2,
+      delay: 0.2,
+      ease: "back.out(1.7)",
+    });
+  
+    // Animate the #deliver element
+    gsap.to("#deliver", {
+      x: 800,
+      y: -500,
+      rotation: 360,
+      duration: 2,
+      delay: 0.2,
+      ease: "back.out(1.7)",
+    });
+  
+    // Animate .gif-img with responsive positioning
+    gsap.to(".gif-img", {
+      duration: 2,
+      top: "35%", // Responsive positioning
+      delay: 0.4,
+      opacity: 1,
+      ease: "power2.out",
+    });
+  
+    // Adjust animations dynamically on window resize
+    window.addEventListener("resize", () => {
+      const newTop = window.innerWidth < 768 ? "65%" : "35%"; // Adjust based on screen width
+      gsap.to(".gif-img", {
+        top: newTop,
+        duration: 1,
+        ease: "power2.out",
+      });
+    });
   });
 
-  // Foreground layers (faster movement, inverse Y for upward effect)
-  gsap.from(".mountain-4", {
-    x: newX * 0.1,
-    // y: -newY * 0.1,  // Negative Y to move upward
-    duration: 1.2,
-    ease: "power1.out",
-  });
 
-  gsap.from(".mountain-5", {
-    x: newX * 0.12,
-    // y: -newY * 0.12,  // Negative Y to move upward
-    duration: 1.5,
-    ease: "power1.out",
-  });
-
-  gsap.from(".mountain-6", {
-    x: newX * 0.15,
-    // y: -newY * 0.15,  // Negative Y to move upward
-    duration: 1.8,
-    ease: "power1.out",
-  });
-
-  gsap.from(".mountain-7", {
-    x: newX * 0.18,
-    // y: -newY * 0.18,  // Negative Y to move upward
-    duration: 2,
-    ease: "power1.out",
-  });
-
-  gsap.from(".mountain-8", {
-    x: newX * 0.2,
-    // y: -newY * 0.2,  // Negative Y to move upward
-    duration: 2.2,
-    ease: "power1.out",
-  });
-
-  gsap.from(".mountain-9", {
-    x: newX * 0.2,
-    // y: -newY * 0.2,  // Negative Y to move upward
-    duration: 2.5,
-    ease: "power1.out",
-  });
-
-
-  gsap.from(".fog-1", {
-    x: newX * 0.2,
-    // y: -newY * 0.2,  // Negative Y to move upward
-    duration: 2.5,
-    ease: "power1.out",
-  });
-
-  gsap.from(".fog-2", {
-    x: newX * 0.2,
-    // y: -newY * 0.2,  // Negative Y to move upward
-    duration: 2.5,
-    ease: "power1.out",
-  });
-
-  gsap.from(".fog-3", {
-    x: newX * 0.2,
-    // y: -newY * 0.2,  // Negative Y to move upward
-    duration: 2.5,
-    ease: "power1.out",
-  });
-});
-
-
-// ---------------------------------------------------------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------------------------------------------------
 
 var scroller = document.querySelector("#scroller");
 
@@ -622,16 +548,13 @@ function animateSVGPath() {
     });
   }
        
-  // Call the function to start the animation
-  animateSVGPath();
+// Call the function to start the animation
 
-
-
+animateSVGPath();
 
 //drower animation start from here 
 
 let timeline1 = gsap.timeline();
-
 
 timeline1.to("#menu",{
     right:0,
